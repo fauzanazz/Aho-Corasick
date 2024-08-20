@@ -18,6 +18,7 @@ public class Ahocorasick {
     }
 
     public void addPattern(String pattern, int index) {
+        pattern = pattern.toLowerCase();
         Node node = root;
         for (char ch : pattern.toCharArray()) {
             int charIndex = ch;
@@ -60,6 +61,7 @@ public class Ahocorasick {
     }
 
     public Map<String, List<int[]>> search(String text, String[] patterns) {
+        text = text.toLowerCase();
         Map<String, List<int[]>> result = new HashMap<>();
         Node node = root;
         for (int i = 0; i < text.length(); i++) {
